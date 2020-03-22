@@ -2,6 +2,9 @@ package br.com.projetoClinica;
 
 public class Cavalo extends Animal{
 	
-	Cavalo c = new Cavalo();
-	
+	@Override
+	public void tipo() {
+		super.tipo();
+		System.out.println("Tipo: Cavalo");
+	}
 }

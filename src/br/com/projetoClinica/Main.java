@@ -1,10 +1,18 @@
 package br.com.projetoClinica;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+
+
+
+
 
 public class Main {
 	
 	Scanner ler = new Scanner(System.in);
+	int i = 1;
+	List<Animal> ListaDeAnimais = new ArrayList<Animal>();
 
 	public static void main(String[] args) {
 		
@@ -19,8 +27,8 @@ public class Main {
 		int opcao = 0;
 		
 		
-		while(opcao != 8) {
-			
+		
+		do {	
 			System.out.println("------------------");
 			System.out.println("1 - Cadastrar Cavalo");
 			System.out.println("2 - Cadastrar Girafa");
@@ -32,9 +40,10 @@ public class Main {
 			System.out.println("8 - Sair");
 			System.out.println("------------------");
 			
+			System.out.println("Escolha uma opação: ");
 			opcao = ler.nextInt();
 			
-		try {
+		
 			switch (opcao) {
 			case 1: cadastrarCavalo();
 				
@@ -61,32 +70,85 @@ public class Main {
 			
 				break;
 			}
-		} catch (Exception e) {
-			System.out.println("Nenhum valor valido foi digitado!");
-		}
+		
+		}while(opcao>= 1 && opcao <=8);
 		
 		
-		}
 		
 	}
 	
+	
+	
 	public void cadastrarCavalo() {
+		
+		System.out.println("Digite o nome do Cavalo: ");
+	
+		ler.nextLine();
+		String nome = ler.nextLine();
+		Cavalo c = new Cavalo();
+		c.setId(i);
+		c.setNome(nome);
+		System.out.println("Cavalo cadastrado com sucesso.");
+		i++;
+		
+		ListaDeAnimais.add(c);
+		
+		System.out.println("\nPrescione enter para continuar");
+		ler.nextLine();
+		
 		
 	}
 	
 	public void cadastrarGirafa() {
+		System.out.println("Digite o nome do Girafa: ");
 		
+		ler.nextLine();
+		String nome = ler.nextLine();
+		Girafa g = new Girafa();
+		g.setId(i);
+		g.setNome(nome);
+		System.out.println("Girafa cadastrada com sucesso.");
+		i++;
+		
+		ListaDeAnimais.add(g);
+		
+		System.out.println("\nPrescione enter para continuar");
+		ler.nextLine();
 	}
 	
+	
+	
 	public void listarCavalos() {
+		for(Animal animal : ListaDeAnimais) {
+			if(animal instanceof Cavalo) {
+				System.out.println("Dados do Cavalo: ");
+				animal.id(); animal.nome();
+			}
+		}
 		
+		System.out.println("\nPrescione enter para continuar");
+		ler.nextLine();
 	}
 	
 	public void listarGirafas() {
+		for(Animal animal : ListaDeAnimais) {
+			if(animal instanceof Girafa) {
+				System.out.println("Dados da Girafa: ");
+				animal.id(); animal.nome();
+			}
+		}
 		
+		System.out.println("\nPrescione enter para continuar");
+		ler.nextLine();
 	}
 	
 	public void listarTodosOsAnimais() {
+		for(Animal animal : ListaDeAnimais) {
+			animal.nome();
+		}
+		
+		System.out.println("\nPrescione enter para continuar");
+		ler.nextLine();
 		
 	}
 	

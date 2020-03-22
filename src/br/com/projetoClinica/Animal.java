@@ -19,6 +19,15 @@ public abstract class Animal {
 		this.nome = nome;
 	}
 	
+	public void id() {
+		System.out.println("Id: " + getId());
+	}
 	
+	public void nome() {
+		System.out.println("Nome: " + getNome());
+	}
+	public void tipo() {
+		System.out.println("Tipo: xxxxx");
+	}
 	
 }
