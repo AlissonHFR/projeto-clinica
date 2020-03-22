@@ -4,6 +4,6 @@ public class Girafa extends Animal{
 	@Override
 	public void tipo() {
 		super.tipo();
-		System.out.println("Tipo: Girafa");
+		System.out.print("Tipo: Girafa | ");
 	}
 }

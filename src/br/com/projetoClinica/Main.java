@@ -28,7 +28,7 @@ public class Main {
 		
 		
 		
-		do {	
+		do {
 			System.out.println("------------------");
 			System.out.println("1 - Cadastrar Cavalo");
 			System.out.println("2 - Cadastrar Girafa");
@@ -144,7 +144,11 @@ public class Main {
 	
 	public void listarTodosOsAnimais() {
 		for(Animal animal : ListaDeAnimais) {
+			System.out.println("\nDados do Animal: ");
+			animal.tipo();
+			animal.id();
 			animal.nome();
+			
 		}
 		
 		System.out.println("\nPrescione enter para continuar");
@@ -156,8 +160,38 @@ public class Main {
 		
 	}
 	public void exibirQuantidadeDeAnimaisCadastradosPorTipo() {
-		
+		int x = 0,y=0,z=0;
+		for(Animal a : ListaDeAnimais) {
+			if(a instanceof Cavalo) {
+				x++;
+			}
+		}
+		System.out.println("Numero de cavalos cadastrados: " + x);
+		for(Animal animal : ListaDeAnimais) {
+			if(animal instanceof Cavalo) {
+				System.out.print("Dados do Cavalo: ");
+				animal.id(); animal.nome();
+			}
+	
+
+		}
+		System.out.println("\n");
+		for(Animal a : ListaDeAnimais) {
+			if(a instanceof Girafa) {
+				y++;
+			}
+		}
+		System.out.println("Numero de girafas cadastradas: " + y);
+		for(Animal animal : ListaDeAnimais) {
+			if(animal instanceof Girafa) {
+				System.out.print("Dados da Girafa: ");
+				animal.id(); animal.nome();
+			}
+	
+
+		}
+		System.out.println("\n");
+		z = x+y;
+		System.out.println("Total de animais cadastrados: " + z);
 	}
-
-
 }

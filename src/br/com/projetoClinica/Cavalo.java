@@ -5,6 +5,6 @@ public class Cavalo extends Animal{
 	@Override
 	public void tipo() {
 		super.tipo();
-		System.out.println("Tipo: Cavalo");
+		System.out.print("Tipo: Cavalo | ");
 	}
 }

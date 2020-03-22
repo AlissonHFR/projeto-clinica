@@ -20,14 +20,14 @@ public abstract class Animal {
 	}
 	
 	public void id() {
-		System.out.println("Id: " + getId());
+		System.out.print("Id: " + getId()+" | ");
 	}
 	
 	public void nome() {
-		System.out.println("Nome: " + getNome());
+		System.out.print("Nome: " + getNome()+" | ");
 	}
 	public void tipo() {
-		System.out.println("Tipo: xxxxx");
+		
 	}
 	
 }
