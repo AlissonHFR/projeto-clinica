@@ -157,6 +157,20 @@ public class Main {
 	}
 	
 	public void removerUmAminalPorId() {
+		System.out.println("Digite o id do animal a ser removido: ");
+		int id = ler.nextInt();
+		
+		for(Animal animal : ListaDeAnimais) {
+			if(animal.getId() == id) {
+				ListaDeAnimais.remove(animal);
+				System.out.println("Animal removido com sucesso.");
+			}else {
+				System.out.println("Id nao encontrado");
+			}
+		}
+		
+		System.out.println("\nPrescione enter para continuar");
+		ler.nextLine();
 		
 	}
 	public void exibirQuantidadeDeAnimaisCadastradosPorTipo() {
@@ -193,5 +207,8 @@ public class Main {
 		System.out.println("\n");
 		z = x+y;
 		System.out.println("Total de animais cadastrados: " + z);
+		
+		System.out.println("\nPrescione enter para continuar");
+		ler.nextLine();
 	}
 }
