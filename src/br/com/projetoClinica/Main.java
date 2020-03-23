@@ -166,16 +166,11 @@ public class Main {
 	public void removerUmAminalPorId() {
 		System.out.println("Digite o id do animal a ser removido: ");
 		int id = ler.nextInt();
-		int enreco = 0;
-		for(Animal animal : ListaDeAnimais) {
+		
+		for(int y = 0; y < ListaDeAnimais.size();y++) {
+			Animal animal = ListaDeAnimais.get(y);
 			if(animal.getId() == id) {
-				enreco = animal.hashCode();
-			}else {
-				System.out.println("Id nao encontrado");
-			}
-			if(enreco == animal.getId()) {
-				ListaDeAnimais.remove(enreco);
-				
+				ListaDeAnimais.remove(y);
 			}
 		}
 		
