@@ -21,6 +21,12 @@ public class Main {
 			
 
 	}
+	
+	private void limparTela() {
+		for(int i = 0;i<20;i++) {
+			System.out.println("\n");
+		}
+	}
 
 	private void start() {
 		
@@ -29,6 +35,7 @@ public class Main {
 		
 		
 		do {
+			limparTela();
 			System.out.println("------------------");
 			System.out.println("1 - Cadastrar Cavalo");
 			System.out.println("2 - Cadastrar Girafa");
@@ -159,13 +166,16 @@ public class Main {
 	public void removerUmAminalPorId() {
 		System.out.println("Digite o id do animal a ser removido: ");
 		int id = ler.nextInt();
-		
+		int enreco = 0;
 		for(Animal animal : ListaDeAnimais) {
 			if(animal.getId() == id) {
-				ListaDeAnimais.remove(animal);
-				System.out.println("Animal removido com sucesso.");
+				enreco = animal.hashCode();
 			}else {
 				System.out.println("Id nao encontrado");
+			}
+			if(enreco == animal.getId()) {
+				ListaDeAnimais.remove(enreco);
+				
 			}
 		}
 		
